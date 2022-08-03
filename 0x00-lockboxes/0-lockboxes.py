@@ -16,7 +16,6 @@ def canUnlockAll(boxes):
     count = 1
     while new_list:
         keys = boxes[new_list.pop()]
-        print(keys)
         for j in keys:
             if not new_dict[j]:
                 new_list.append(j)
