@@ -18,4 +18,3 @@ def canUnlockAll(boxes):
                 new_dict[j] = True
                 count += 1
     return len(boxes) == count
-        
