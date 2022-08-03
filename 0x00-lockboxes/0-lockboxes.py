@@ -11,7 +11,6 @@ def canUnlockAll(boxes):
         new_dict[i] = False
     [new_list.append(j) for j in boxes[0]]
     for item in new_list:
-        print(new_list)
         if new_dict[item] is False:
             new_dict[item] = True
             [new_list.append(j) for j in boxes[item] if j not in new_list]
