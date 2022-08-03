@@ -16,4 +16,4 @@ def canUnlockAll(boxes):
             [new_list.append(j) for j in boxes[item] if j not in new_list]
     aux = list(set(list(new_dict.values())))
     print(aux)
-    return len(list(set(list(new_dict.values())))) == 1 and aux[0] == True
+    return len(list(set(list(new_dict.values())))) == 1 and aux[0] is True
