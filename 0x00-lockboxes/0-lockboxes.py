@@ -4,14 +4,15 @@
 
 def canUnlockAll(boxes):
     '''the function'''
-    aux = []
-    bul = True
-    [aux.append(item) for item in boxes[0]]
-    print(aux)
-    for i in range(1,len(aux)):
-        if i in aux:
-            [aux.append(item) for item in boxes[i]]
-        
-    #for item in boxes:
-    return True
-        
+    new_dict = {}
+    new_list = [0]
+    new_dict[0] = True
+    for i in range(1, len(boxes)):
+        new_dict[i] = False
+    [new_list.append(j) for j in boxes[0]]
+    for item in new_list:
+        print(new_list)
+        if new_dict[item] is False:
+            new_dict[item] = True
+            [new_list.append(j) for j in boxes[item] if j not in new_list]
+    return len(list(set(list(new_dict.values())))) == 1
