@@ -4,6 +4,10 @@
 
 def canUnlockAll(boxes):
     '''the function'''
+    if type(boxes) is not list:
+        return False
+    if len(boxes) == 0:
+        return False
     new_dict = {}
     new_list = [0]
     new_dict[0] = True
@@ -12,6 +16,7 @@ def canUnlockAll(boxes):
     count = 1
     while new_list:
         keys = boxes[new_list.pop()]
+        print(keys)
         for j in keys:
             if not new_dict[j]:
                 new_list.append(j)
