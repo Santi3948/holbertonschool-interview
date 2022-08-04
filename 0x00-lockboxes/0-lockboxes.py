@@ -10,7 +10,7 @@ def canUnlockAll(boxes):
     open_lis = set(pend_lis)
     while pend_lis:
         pend = pend_lis.pop()
-        for key in pend:
+        for key in boxes[pend]:
             if key < len(boxes) and key not in open_lis:
                 pend_lis.append(key)
                 open_lis.add(key)
