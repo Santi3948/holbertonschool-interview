@@ -4,21 +4,14 @@
 
 def canUnlockAll(boxes):
     '''the function'''
-    if type(boxes) is not list:
-        return False
-    if len(boxes) == 0:
-        return False
-    new_dict = {}
-    new_list = [0]
-    new_dict[0] = True
-    for i in range(1, len(boxes)):
-        new_dict[i] = False
-    count = 1
-    while new_list:
-        keys = boxes[new_list.pop()]
-        for j in keys:
-            if not new_dict[j]:
-                new_list.append(j)
-                new_dict[j] = True
-                count += 1
-    return len(boxes) == count
+    if len(boxes) <= 1:
+        return True
+    pend_lis = [0]
+    open_lis = set(pend_lis)
+    while pend_lis:
+        pend = pend_lis.pop()
+        for key in pend:
+            if key < len(boxes) and key not in open_lis:
+                pend_lis.append(key)
+                open_lis.add(key)
+    return len(open_lis) == len(boxes)
