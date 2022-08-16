@@ -116,10 +116,12 @@ size_t binary_tree_height(const binary_tree_t *tree)
 			printf("popopopopo\n");
 			if(aux2->right == (*root))
 			{
+				printf("%dzxzxzzx\n", (*root)->n);
 				(*root)->right = aux2;
 				(*root)->left = aux2->left;
 			}
 			else {
+				printf("%dzxzxzzxlllll\n", (*root)->n);
 				(*root)->left = aux2;
 				(*root)->right = aux2->right;
 			}
@@ -127,8 +129,15 @@ size_t binary_tree_height(const binary_tree_t *tree)
 			aux2->right = aux->right;
 			aux2->left = aux->left;
 			printf("pipippipipipipippipipi\n");
-			printf("%dzxzxzzx\n", (*root)->n);
-			binary_tree_print((*root));
+			if ((*root))
+			{
+				printf("%dzxzxzzx\n", (*root)->n);
+				binary_tree_print((*root));
+			}
+			else
+			{
+				printf("fullanashei\n");
+			}
 			printf("ioioioioioioioio\n");
 		}
 		printf("papopepo\n");
