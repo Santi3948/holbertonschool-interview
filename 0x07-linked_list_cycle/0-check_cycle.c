@@ -11,19 +11,18 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *aux = list;
+	listint_t *aux2 = list;
 
 	if (list == NULL)
 	{
 		return (0);
 	}
-	aux = aux->next;
-	while (aux != NULL)
+	while (aux && aux2 && aux2->next)
 	{
-		if (aux == list)
-		{
-			return (1);
-		}
 		aux = aux->next;
+		aux2 = aux2->next->next;
+		if (aux == aux2)
+			return (1);
 	}
 	return (0);
 }
